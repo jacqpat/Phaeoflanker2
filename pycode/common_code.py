@@ -7,8 +7,19 @@ two other scripts.
 import os
 import pandas as pd
 
-def read_tsv_file(path="~/projet_Flanker/Phaeoflanker2/contigs/contig_summary.tsv"):
+def read_tsv_file(path):
+    ''' read a tab separated file as a pandas dataframe '''
     return (pd.read_csv(path, sep='\t',header=0))
+def read_csv_file(path):
+    '''
+    read a commas separated file as a pandas dataframe
+    try to take into account anglo and french standards
+    '''
+    try:
+        df = pd.read_csv(path, sep=',',header=0)
+    except:
+        df = pd.read_csv(path, sep=';',header=0)
+    return df
 
 def check_and_make(foldername):
     ''' if a folder with that name does not exist : create it'''
