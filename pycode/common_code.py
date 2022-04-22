@@ -5,6 +5,10 @@ regroup common functions used in at least
 two other scripts.
 '''
 import os
+import pandas as pd
+
+def read_tsv_file(path="~/projet_Flanker/Phaeoflanker2/contigs/contig_summary.tsv"):
+    return (pd.read_csv(path, sep='\t',header=0))
 
 def check_and_make(foldername):
     ''' if a folder with that name does not exist : create it'''
