@@ -9,9 +9,9 @@ import common_code as cc
 
 f = sys.argv[1]
 ctx = sys.argv[2]
-if f[:-3] == "tsv":
+if f[-3:] == "tsv":
     df1 = cc.read_tsv_file(path = f)
-elif f[:-3] == "csv":
+elif f[-3:] == "csv":
     df1 = cc.read_csv_file(path = f)
 df2 = df1.filter(['contig','EVE_start','EVE_end','context'], axis=1)
 try:
