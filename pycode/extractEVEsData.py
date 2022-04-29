@@ -29,14 +29,14 @@ elif f[-3:] == "csv":
     df1 = cc.read_csv_file(path = f)
 
 ## keep only the columns that we want + rows with the demanded context ##
-df2 = df1.filter(['contig','EVE_start','EVE_end','context'], axis=1)
+df1 = df1.filter(['contig','EVE_start','EVE_end','context'], axis=1)
 try:
     if ctx == "good" or ctx == "g" or ctx == "hvh":
-        df3 = df2[df2.context == 'HVH']
+        df1 = df1[df1.context == 'HVH']
     elif ctx == "maybe" or ctx == "m" or ctx == "hv" or ctx == "vh":
-        df3 = df2[df2.context == "HV"]
+        df1 = df1[df1.context == "HV"]
     elif ctx == "provirus" or ctx == "p" or ctx == "v":
-        df3 = df2[df2.context == "V"]
+        df1 = df1[df1.context == "V"]
     else:
         print("wrong parameter given")
         sys.exit()
@@ -55,8 +55,8 @@ for filename in os.listdir(fld):
                 if l.startswith('>'):
                     contig_name = l[1:-1]
                     # without this check, we go from 6 to 41 seconds (with HVH context)
-                    if contig_name in df3['contig'].tolist():
-                        df_ourEVEs = pd.concat([df_ourEVEs,df3.loc[df3['contig'] == contig_name]])
+                    if contig_name in df1['contig'].tolist():
+                        df_ourEVEs = pd.concat([df_ourEVEs,df1.loc[df1['contig'] == contig_name]])
 
 savepath = Path(os.path.join(sfe, f'eves_{ctx}.csv'))
 savepath.parent.mkdir(parents=True, exist_ok=True)  

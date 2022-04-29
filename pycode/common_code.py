@@ -65,13 +65,3 @@ def removeLineBreaks(arr):
         arr[i] = arr[i].replace("\n", "")
     arr = list(filter(lambda x: x != "", arr))
     return arr
-
-def get_contigs(parameter):
-    if parameter == "provirus":
-        lines = get_lines("contigs/contigs_provirus.txt")
-    elif parameter == "maybe":
-        lines = get_lines("contigs/contigs_maybe.txt")
-    else :
-        lines = get_lines('contigs/contigs_good.txt')
-    lines = stripNewLine(lines)
-    return lines
