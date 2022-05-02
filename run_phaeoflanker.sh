@@ -10,14 +10,14 @@
 
 #module load bedtools
 
-cntig_file='contigs/contig_summary.tsv'
-fasta_fold='../sources_fa'
-gff_fold='../sources_gff'
-saves_fold='../sources_EVEs'
-cotxt_qual='hvh'
-saves_file="${saves_fold}/eves_${cotxt_qual}.csv"
-flank_size="100000"
-gff_saves_fold="../eves_and_flanks_gff"
+file_ctg='contigs/contig_summary.tsv'
+fold_fst='../sources_fa'
+fold_gff='../sources_gff'
+fold_svd='../sources_EVEs'
+qual_ctx='hvh'
+file_svd="${fold_svd}/eves_${qual_ctx}.csv"
+size_flk="100000"
+fold_svd_gff="../eves_and_flanks_gff"
 
-python3 pycode/extractEVEsData.py $cntig_file $fasta_fold $saves_fold $cotxt_qual
-python3 pycode/extractGenesOfEVEs.py $saves_file $gff_fold $flank_size $gff_saves_fold
+python3 pycode/extractEVEsData.py $file_ctg $fold_fst $fold_svd $qual_ctx
+python3 pycode/extractGenesOfEVEs.py $file_svd $fold_gff $size_flk $fold_svd_gff
