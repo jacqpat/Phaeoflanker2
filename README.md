@@ -6,3 +6,9 @@ The first step is to prepare a tsv or csv file containing the list of contigs/ch
 You fasta and gff files can be storaged anywhere you want as long as they are accessible to Phaeoflanker and in separate folders. Change their respective path in the bash file.
 
 You can now launch the bash file from your console.
+
+# Authors
+* **Patrick Jacques** _alias_ [@jacqpat](https://github.com/jacqpat)
+
+# License
+This project is under GPL-3.0 License - see LICENSE.md file for more information
