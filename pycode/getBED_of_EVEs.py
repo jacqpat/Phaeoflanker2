@@ -40,11 +40,8 @@ for filename in os.listdir(folder_gff):
                     end = g.end
         bstring = f'{basef}\t{start}\t{end}\n'
         bbstring += bstring
-nb = 0
 bbstring = bbstring.rstrip('\n')
-path2file = f'bedfile{nb}.bed'
-while path2file in os.listdir(folder_bed):
-    nb += 1
-    path2file = f'bedfile{nb}.bed'
+path2file = f'bedfile_{os.path.basename(folder_gff)}.bed'
+print(path2file)
 path2file = os.path.join(folder_bed, path2file)
 cc.save_file(path2file,bbstring)

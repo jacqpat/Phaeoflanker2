@@ -23,3 +23,11 @@ fold_svd_gff="../eves_and_flanks_gff"
 python3 pycode/extractEVEsData.py $file_ctg $fold_fst $fold_svd $qual_ctx
 python3 pycode/extractGenesOfEVEs.py $file_svd $fold_gff $size_flk $fold_svd_gff
 python3 pycode/getBED_of_EVEs.py $fold_bed $fold_svd_gff
+
+eves=$(cat ${file_svd} | cut -d \, -f 2)
+for l in $eves
+do
+    echo $l
+done
+
+# bedtools getfasta -name -fi $sfst -bed $gff2 -fo $fst2
