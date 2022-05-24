@@ -10,6 +10,7 @@
 
 #module load bedtools
 
+file_ref="../names.txt"
 file_ctg='contigs/contig_summary.tsv'
 fold_fst='../sources_fa'
 fold_gff='../sources_gff'
@@ -25,9 +26,14 @@ python3 pycode/extractGenesOfEVEs.py $file_svd $fold_gff $size_flk $fold_svd_gff
 python3 pycode/getBED_of_EVEs.py $fold_bed $fold_svd_gff
 
 eves=$(cat ${file_svd} | cut -d \, -f 2)
-for l in $eves
+srcs=$(cat ${file_svd} | cut -d \, -f 6)
+for i in "${!eves[@]}"
 do
-    echo $l
+    src="${fold_fst}/${srcs[i]}"
+    ev="${fold_svd_gff}/EVE_${l}.gff"
+    up="${fold_svd_gff}/EVE_${l}_up.gff"
+    dw="${fold_svd_gff}/EVE_${l}_down.gff"
+    echo $src
 done
 
 # bedtools getfasta -name -fi $sfst -bed $gff2 -fo $fst2

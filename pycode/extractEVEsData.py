@@ -46,6 +46,7 @@ except AttributeError:
 
 ## from the fasta folder, keep only the contigs with an EVE and make a new dataframe with them ##
 df_ourEVEs = pd.DataFrame(columns= ['contig','EVE_start','EVE_end','context'])
+filenames = []
 for filename in os.listdir(fld):
     f = os.path.join(fld, filename)
     if os.path.isfile(f) and (f.endswith(".fa") or f.endswith(".fasta")):
@@ -57,7 +58,8 @@ for filename in os.listdir(fld):
                     # without this check, we go from 6 to 41 seconds (with HVH context)
                     if contig_name in df1['contig'].tolist():
                         df_ourEVEs = pd.concat([df_ourEVEs,df1.loc[df1['contig'] == contig_name]])
-
+                        filenames.append(filename)
+df_ourEVEs['og_file'] = filenames
 savepath = Path(os.path.join(sfe, f'eves_{ctx}.csv'))
 savepath.parent.mkdir(parents=True, exist_ok=True)  
 df_ourEVEs.to_csv(savepath) 

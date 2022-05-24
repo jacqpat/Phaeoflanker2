@@ -42,6 +42,5 @@ for filename in os.listdir(folder_gff):
         bbstring += bstring
 bbstring = bbstring.rstrip('\n')
 path2file = f'bedfile_{os.path.basename(folder_gff)}.bed'
-print(path2file)
 path2file = os.path.join(folder_bed, path2file)
 cc.save_file(path2file,bbstring)
