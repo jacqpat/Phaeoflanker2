@@ -19,6 +19,7 @@ fold_bed='../BED'
 qual_ctx='hvh'
 file_svd="${fold_svd}/eves_${qual_ctx}.csv"
 size_flk="100000"
+fold_svd_img="../eves_and_flanks_img"
 fold_svd_gff="../eves_and_flanks_gff"
 fold_svd_fa="../eves_and_flanks_fa"
 bed_file='${fold_bed}/bedfile_${fold_svd_gff}.bed'
@@ -51,6 +52,9 @@ do
     fev="${fold_svd_fa}/EVE_${a_eves[$i]}.fa"
     fup="${fold_svd_fa}/EVE_${a_eves[$i]}_up.fa"
     fdw="${fold_svd_fa}/EVE_${a_eves[$i]}_down.fa"
+    python3 pycode/drawEVE.py $ev $fold_svd_img
+    python3 pycode/drawEVE.py $up $fold_svd_img
+    python3 pycode/drawEVE.py $dw $fold_svd_img
     bedtools getfasta -name -fi $sc -bed $ev -fo $fev
     bedtools getfasta -name -fi $sc -bed $up -fo $fup
     bedtools getfasta -name -fi $sc -bed $dw -fo $fdw

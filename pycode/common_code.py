@@ -7,6 +7,11 @@ two other scripts.
 import os
 import pandas as pd
 
+def rstrip_and_split(x):
+    x = x.rstrip('\n')
+    x = x.split('\t')
+    return x
+
 def read_tsv_file(path):
     ''' read a tab separated file as a pandas dataframe '''
     return (pd.read_csv(path, sep='\t',header=0))
