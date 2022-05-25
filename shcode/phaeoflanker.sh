@@ -1,16 +1,15 @@
 #!/bin/bash
 
-file_ref=$1
-file_ctg=$2
-fold_fst=$3
-fold_gff=$4
-fold_svd=$5
-fold_bed=$6
-qual_ctx=$7
-size_flk=$8
-fold_svd_img=$9
-fold_svd_gff=${10}
-fold_svd_fa=${11}
+file_ctg=$1
+fold_fst=$2
+fold_gff=$3
+fold_svd=$4
+fold_bed=$5
+qual_ctx=$6
+size_flk=$7
+fold_svd_img=$8
+fold_svd_gff=$9
+fold_svd_fa=${10}
 file_svd="${fold_svd}/eves_${qual_ctx}.csv"
 bed_file='${fold_bed}/bedfile_${fold_svd_gff}.bed'
 
