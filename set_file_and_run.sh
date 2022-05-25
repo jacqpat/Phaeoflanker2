@@ -22,4 +22,4 @@ fold_svd_img="../eves_and_flanks_img"
 fold_svd_gff="../eves_and_flanks_gff"
 fold_svd_fa="../eves_and_flanks_fa"
 
-./run_phaeoflanker.sh $file_ref $file_ctg $fold_fst $fold_gff $fold_svd $fold_bed $qual_ctx $size_flk $fold_svd_img $fold_svd_gff $fold_svd_fa
+./shcode/phaeoflanker.sh $file_ref $file_ctg $fold_fst $fold_gff $fold_svd $fold_bed $qual_ctx $size_flk $fold_svd_img $fold_svd_gff $fold_svd_fa
