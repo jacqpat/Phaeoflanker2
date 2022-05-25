@@ -1,27 +1,17 @@
 #!/bin/bash
 
-#SBATCH --mem 10GB 
-#SBATCH -o phaeoflanker.%N.%j.out
-#SBATCH -e phaeoflanker.%N.%j.err
-#SBATCH --cpus-per-task=1
-#SBATCH --mail-type=ALL
-#SBATCH --mail-user=pjacques@sb-roscoff.fr
-#SBATCH -p fast
-
-#module load bedtools
-
-file_ref="../names.txt"
-file_ctg='contigs/contig_summary.tsv'
-fold_fst='../sources_fa'
-fold_gff='../sources_gff'
-fold_svd='../sources_EVEs'
-fold_bed='../BED'
-qual_ctx='hvh'
+file_ref=$1
+file_ctg=$2
+fold_fst=$3
+fold_gff=$4
+fold_svd=$5
+fold_bed=$6
+qual_ctx=$7
+size_flk=$8
+fold_svd_img=$9
+fold_svd_gff=${10}
+fold_svd_fa=${11}
 file_svd="${fold_svd}/eves_${qual_ctx}.csv"
-size_flk="100000"
-fold_svd_img="../eves_and_flanks_img"
-fold_svd_gff="../eves_and_flanks_gff"
-fold_svd_fa="../eves_and_flanks_fa"
 bed_file='${fold_bed}/bedfile_${fold_svd_gff}.bed'
 
 python3 pycode/extractEVEsData.py $file_ctg $fold_fst $fold_svd $qual_ctx

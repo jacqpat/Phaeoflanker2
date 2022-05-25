@@ -8,12 +8,10 @@ python3 drawEVE.py [GFF FILE] [SAVE FILE]
 '''
 import os
 import sys
-import time
 from pyx import *
 from class_gff import Gene
 import common_code as cc
 
-start = time.process_time()
 def draw_sequence_svg(widths,values,bname):
     c = canvas.canvas()
     back_pos = 0
@@ -30,11 +28,12 @@ def draw_sequence_svg(widths,values,bname):
             c.fill(path.rect(back_pos, 0, width, height), [color.gray(0.8)])
         back_pos = back_pos + widths[i]
     c.writeSVGfile(bname)
+    print(f'{bs_name} drawn')
 
 seq_des_gff = sys.argv[1]
 savefile = sys.argv[2]
 cc.check_and_make(savefile)
-bs_name = str(savefile + os.path.splitext(seq_des_gff)[0])
+bs_name = str(savefile + '/' + os.path.basename(seq_des_gff))
 lines = cc.get_lines(seq_des_gff)
 goi = {}
 for x in lines:
@@ -49,5 +48,5 @@ g_value = []
 for k,v in goi.items():
     g_width.append(v.taille()/100)
     g_value.append(v.element)
-draw_sequence_svg(g_width,g_value,bs_name)
-print(time.process_time() - start)
+if g_width :
+    draw_sequence_svg(g_width,g_value,bs_name)
