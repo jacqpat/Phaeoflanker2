@@ -14,8 +14,7 @@ file_svd="${fold_svd}/eves_${qual_ctx}.csv"
 bed_file='${fold_bed}/bedfile_${fold_svd_gff}.bed'
 
 python3 pycode/extractEVEsData.py $file_ctg $fold_fst $fold_svd $qual_ctx
-python3 pycode/extractGenesOfEVEs.py $file_svd $fold_gff $size_flk $fold_svd_gff
-python3 pycode/getBED_of_EVEs.py $fold_bed $fold_svd_gff
+python3 pycode/extractGenesOfEVEs.py $file_svd $fold_gff $size_flk $fold_svd_gff $fold_bed
 
 eves=$(cat ${file_svd} | cut -d \, -f 2)
 a_eves=()
