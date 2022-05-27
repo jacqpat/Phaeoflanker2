@@ -104,6 +104,6 @@ make the bed
 '''
 cc.check_and_make(folder_bed)
 save_as_bed(eves_genes,folder_bed)
-save_as_bed(flanks_genes,gff_safe)
+save_as_bed(flanks_genes,folder_bed)
 
 print(time.process_time() - t_start)

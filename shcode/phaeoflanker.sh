@@ -40,10 +40,13 @@ do
     fev="${fold_svd_fa}/EVE_${a_eves[$i]}.fa"
     fup="${fold_svd_fa}/EVE_${a_eves[$i]}_up.fa"
     fdw="${fold_svd_fa}/EVE_${a_eves[$i]}_down.fa"
+    bev="${fold_bed}/eve_${a_eves[$i]}.bed"
+    bup="${fold_bed}/up_${a_eves[$i]}.bed"
+    bdw="${fold_bed}/down_${a_eves[$i]}.bed"
     python3 pycode/drawEVE.py $ev $fold_svd_img
     python3 pycode/drawEVE.py $up $fold_svd_img
     python3 pycode/drawEVE.py $dw $fold_svd_img
-    bedtools getfasta -name -fi $sc -bed $ev -fo $fev
-    bedtools getfasta -name -fi $sc -bed $up -fo $fup
-    bedtools getfasta -name -fi $sc -bed $dw -fo $fdw
+    bedtools getfasta -fi $sc -bed $bev -fo $fev
+    bedtools getfasta -fi $sc -bed $bup -fo $fup
+    bedtools getfasta -fi $sc -bed $bdw -fo $fdw
 done
