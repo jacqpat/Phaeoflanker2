@@ -33,7 +33,7 @@ def draw_sequence_svg(widths,values,bname):
 seq_des_gff = sys.argv[1]
 savefile = sys.argv[2]
 cc.check_and_make(savefile)
-bs_name = str(savefile + '/' + os.path.splitext(seq_des_gff)[0])
+bs_name = str(savefile + '/' + os.path.basename(os.path.splitext(seq_des_gff)[0]))
 lines = cc.get_lines(seq_des_gff)
 goi = {}
 for x in lines:

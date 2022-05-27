@@ -96,13 +96,11 @@ for filename in os.listdir(fold_gff):
                         flanks_genes[f'{g.sequence}_down'].append(g)
                     else:
                         flanks_genes[f'{g.sequence}_down'] = [g]
-cc.check_and_make(gff_safe)
 save_as_gff(eves_genes,gff_safe)
 save_as_gff(flanks_genes,gff_safe)
 '''
 make the bed
 '''
-cc.check_and_make(folder_bed)
 save_as_bed(eves_genes,folder_bed)
 save_as_bed(flanks_genes,folder_bed)
 

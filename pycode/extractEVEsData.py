@@ -18,8 +18,6 @@ fld = sys.argv[2]
 sfe = sys.argv[3]
 ctx = sys.argv[4].lower()
 
-cc.check_and_make(sfe)
-
 ### parsing contig to keep only EVEs or provirus ###
 
 ## can take either tsv or csv files ##
