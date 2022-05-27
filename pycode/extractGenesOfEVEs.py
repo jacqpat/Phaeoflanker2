@@ -42,7 +42,7 @@ def save_as_bed(dict,path):
                 if i.end < end:
                     end = i.end
         bbstring = f'{k}\t{start}\t{end}'
-        filepath = f'{path}/{t}_{k}.bed'
+        filepath = f'{path}/{k}_{t}.bed'
         cc.save_file(filepath,bbstring)
         print(f'{filepath} printed')
 
