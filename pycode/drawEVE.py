@@ -31,10 +31,12 @@ def draw_sequence_svg(widths,values,bname):
     print(f'{bs_name} drawn')
 
 seq_des_gff = sys.argv[1]
-savefile = sys.argv[2]
-cc.check_and_make(savefile)
-bs_name = str(savefile + '/' + os.path.basename(os.path.splitext(seq_des_gff)[0]))
-lines = cc.get_lines(seq_des_gff)
+savefold = sys.argv[2]
+bs_name = str(savefold + '/' + os.path.basename(os.path.splitext(seq_des_gff)[0]))
+try:
+    lines = cc.get_lines(seq_des_gff)
+except FileNotFoundError:
+    sys.exit()
 goi = {}
 for x in lines:
         x = cc.rstrip_and_split(x)

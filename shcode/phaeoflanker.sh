@@ -47,7 +47,13 @@ do
     python3 pycode/drawEVE.py $ev $fold_svd_img
     python3 pycode/drawEVE.py $up $fold_svd_img
     python3 pycode/drawEVE.py $dw $fold_svd_img
-    bedtools getfasta -fi $sc -bed $bev -fo $fev
-    bedtools getfasta -fi $sc -bed $bup -fo $fup
-    bedtools getfasta -fi $sc -bed $bdw -fo $fdw
+    if [ -f "$bev" ]; then
+        bedtools getfasta -fi $sc -bed $bev -fo $fev
+    fi
+    if [ -f "$bup" ]; then
+        bedtools getfasta -fi $sc -bed $bup -fo $fup
+    fi
+    if [ -f "$bdw" ]; then
+        bedtools getfasta -fi $sc -bed $bdw -fo $fdw
+    fi
 done

@@ -44,9 +44,10 @@ def get_lines(namefile):
 
 def save_file(filepath,bigBadString):
     ''' save a prepared string within a file '''
-    save = open(filepath,"w")
-    save.write(bigBadString)
-    save.close()
+    if bigBadString:
+        save = open(filepath,"w")
+        save.write(bigBadString)
+        save.close()
 
 def array2string(l,str2start = ''):
     ''' transform a list into a string '''

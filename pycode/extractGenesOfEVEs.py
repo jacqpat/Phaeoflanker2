@@ -66,7 +66,8 @@ df_eves = cc.read_csv_file(path = file_eve)
 seqs_eves = df_eves['contig'].tolist()
 
 eves_genes = {}
-flanks_genes = {}
+up_genes = {}
+down_genes = {}
 '''
 make the gff
 '''
@@ -87,21 +88,23 @@ for filename in os.listdir(fold_gff):
                     else:
                         eves_genes[g.sequence] = [g]
                 elif (g.start < b and g.end < b) and (g.start >= b-flk_size and g.end >= b-flk_size):
-                    if f'{g.sequence}_up' in flanks_genes:
-                        flanks_genes[f'{g.sequence}_up'].append(g)
+                    if f'{g.sequence}_up' in up_genes:
+                        up_genes[f'{g.sequence}_up'].append(g)
                     else:
-                        flanks_genes[f'{g.sequence}_up'] = [g]
+                        up_genes[f'{g.sequence}_up'] = [g]
                 elif (g.start > e and g.end > e) and (g.start <= e+flk_size and g.end <= e+flk_size):
-                    if f'{g.sequence}_down' in flanks_genes:
-                        flanks_genes[f'{g.sequence}_down'].append(g)
+                    if f'{g.sequence}_down' in down_genes:
+                        down_genes[f'{g.sequence}_down'].append(g)
                     else:
-                        flanks_genes[f'{g.sequence}_down'] = [g]
+                        down_genes[f'{g.sequence}_down'] = [g]
 save_as_gff(eves_genes,gff_safe)
-save_as_gff(flanks_genes,gff_safe)
+save_as_gff(up_genes,gff_safe)
+save_as_gff(down_genes,gff_safe)
 '''
 make the bed
 '''
 save_as_bed(eves_genes,folder_bed)
-save_as_bed(flanks_genes,folder_bed)
+save_as_bed(up_genes,folder_bed)
+save_as_bed(down_genes,folder_bed)
 
 print(time.process_time() - t_start)

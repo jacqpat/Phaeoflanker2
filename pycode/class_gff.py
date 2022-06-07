@@ -17,13 +17,16 @@ class Gene:
         self.score = gff_array[5]
         self.brin = gff_array[6]
         self.phase = gff_array[7]
-        self.attributes = self.attributes_parser(gff_array[8])
+        self.attributes = self.attributes_parser(gff_array[-1])
     def attributes_parser(self,attributes):
         attr = {}
         attr_1 = attributes.split(';')
         for a in attr_1:
             b = a.split('=')
-            attr[b[0]] = b[1]
+            try:
+                attr[b[0]] = b[1]
+            except IndexError:
+                continue
         return attr
     def resume(self):
         print(self.element,':',self.sequence,':',self.start,'-',self.end)
