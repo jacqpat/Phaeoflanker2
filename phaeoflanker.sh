@@ -19,4 +19,4 @@ fold_svd_img="../eves_and_flanks_img" # <= change to where you want to stock fin
 fold_svd_gff="../eves_and_flanks_gff" # <= change to where you want to stock extracted gff
 fold_svd_faa="../eves_and_flanks_fa" # <= change to where you want to stock extracted fasta
 
-./shcode/phaeoflanker.sh $file_ctg $fold_fst $fold_gff $fold_svd $fold_bed $qual_ctx $size_flk $fold_svd_img $fold_svd_gff $fold_svd_faa
+./shcode/pf_inner_script.sh $file_ctg $fold_fst $fold_gff $fold_svd $fold_bed $qual_ctx $size_flk $fold_svd_img $fold_svd_gff $fold_svd_faa
