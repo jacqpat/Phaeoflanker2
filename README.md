@@ -1,7 +1,7 @@
 # Phaeoflanker2
 new version of Phaeoflanker pipeline
 
-<img src="https://i.imgur.com/6ICdkFr.png" width="100" height="100">
+<img src="https://i.imgur.com/6ICdkFr.png" width="750">
 
 # To start with Phaeoflanker
 Phaeoflanker 2 is meant to be useable both on your personal computer and on a remote server. As such, all the parameters needed for this script can be found and modified in the 'set_and_run.sh' file. It is the only file you will have to interact with to run Phaeoflanker.
