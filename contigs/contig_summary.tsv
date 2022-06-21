@@ -1,14 +1,14 @@
-genome	contig	EVE	EVE_start	EVE_end	context	contig_size	eve_size
-PUBLIC_Cladosiphon-okamuranus	scaffold223	EVE223-1	1	200000	HV	213198	199999
-PUBLIC_Cladosiphon-okamuranus	scaffold296	EVE296-1	24000	147625	HV	147625	123625
-PUBLIC_Ectocarpus-sp7	chr_06	EVE06-1	4219182	4552732	HVH	8757758	333550
-PUBLIC_Ectocarpus-subulatus	Scaffold_172	EVE172-1	28000	40000	HVH	290160	12000
-PUBLIC_Ectocarpus-subulatus	Scaffold_194	EVE194-1	45000	72000	HVH	1811928	27000
-PUBLIC_Ectocarpus-subulatus	Scaffold_557	EVE557-1	504000	590000	HVH	690101	86000
-PUBLIC_Nemacystus-decipiens	scaffold27_size3167232	EVE27_size3167232-1	1	150000	HV	3173888	149999
-PUBLIC_Nemacystus-decipiens	scaffold167_size90808	EVE167_size90808-1	1	91292	V	91292	91291
-PUBLIC_Nemacystus-decipiens	scaffold212_size40883	EVE212_size40883-1	1	34000	HV	41324	33999
-PUBLIC_Undaria-pinnatifida	LG0	EVE0-1	43380500	43399000	HVH	173841120	18500
-PUBLIC_Undaria-pinnatifida	LG5	EVE5-1	6291000	6347000	HVH	21972120	56000
-PUBLIC_Undaria-pinnatifida	LG6	EVE6-1	9455000	9473000	HVH	12412380	18000
-PUBLIC_Undaria-pinnatifida	LG22	EVE22-1	1303000	1682200	HVH	11987580	379200
+genome	contig	EVE_start	EVE_end	context
+PUBLIC_Cladosiphon-okamuranus	scaffold223	1	200000	HV
+PUBLIC_Cladosiphon-okamuranus	scaffold296	24000	147625	HV
+PUBLIC_Ectocarpus-sp7	chr_06	4219182	4552732	HVH
+PUBLIC_Ectocarpus-subulatus	Scaffold_172	28000	40000	HVH
+PUBLIC_Ectocarpus-subulatus	Scaffold_194	45000	72000	HVH
+PUBLIC_Ectocarpus-subulatus	Scaffold_557	504000	590000	HVH
+PUBLIC_Nemacystus-decipiens	scaffold27_size3167232	1	150000	HV
+PUBLIC_Nemacystus-decipiens	scaffold167_size90808	1	91292	V
+PUBLIC_Nemacystus-decipiens	scaffold212_size40883	1	34000	HV
+PUBLIC_Undaria-pinnatifida	LG0	43380500	43399000	HVH
+PUBLIC_Undaria-pinnatifida	LG5	6291000	6347000	HVH
+PUBLIC_Undaria-pinnatifida	LG6	9455000	9473000	HVH
+PUBLIC_Undaria-pinnatifida	LG22	1303000	1682200	HVH
